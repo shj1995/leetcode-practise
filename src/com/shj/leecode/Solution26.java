@@ -49,27 +49,15 @@ public class Solution26 {
         System.out.println(String.format("函数应该返回新的长度 %d, 并且原数组 nums 的前%d个元素被修改为%s。 ",length,length, Arrays.toString(nums)));
     }
 
-    /**
-     * [0,0,1,1,1,2,2,3,3,4],
-     * [0,1,0,1,1,2,2,3,3,4],
-     * [0,1,0,1,1,2,2,3,3,4],
-     * @param nums
-     * @return
-     */
     public int removeDuplicates(int[] nums) {
         if(nums.length<=1){
             return nums.length;
         }
-        int temp;
         int i = 0;
-        for (int j = 0; j < nums.length;j++) {
+        for (int j = 1; j < nums.length;j++) {
             if(nums[i] < nums[j]) {
-//                temp = nums [i+1];
-//                nums[i+1] = nums[j];
-//                nums[j] = temp;
-                nums[i+1] = nums[j];
-//                System.out.println(Arrays.toString(nums));
                 i++;
+                nums[i] = nums[j];
             }
         }
         return i+1;
