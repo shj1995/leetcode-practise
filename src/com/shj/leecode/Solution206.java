@@ -1,5 +1,7 @@
 package com.shj.leecode;
 
+import com.shj.leecode.support.ListNode;
+
 import javax.swing.*;
 import java.util.LinkedList;
 
@@ -52,20 +54,10 @@ public class Solution206 {
         return result;
     }
 
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-
-    public String toString() {
+    public String toString(ListNode node) {
         StringBuilder result = new StringBuilder();
-        result.append(this.val + "->");
-        ListNode current = this.next;
+        result.append(node.val + "->");
+        ListNode current = node.next;
         while (current != null) {
             result.append(current.val + "->");
             current = current.next;
@@ -73,4 +65,5 @@ class ListNode {
         result.append("NULL");
         return result.toString();
     }
+
 }
